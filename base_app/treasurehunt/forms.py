@@ -2,10 +2,13 @@ from django import forms
 from django.contrib.auth.models import User
 
 
-
 class UserForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput())
-    confirm_password = forms.CharField(widget=forms.PasswordInput())
+    username = forms.
+
+    password = forms.CharField(widget=forms.PasswordInput(
+        attrs={'placeholder': 'Enter the Password'}))
+    confirm_password = forms.CharField(widget=forms.PasswordInput(
+        attrs={'placeholder': 'Reenter the password'}))
 
     class Meta():
         model = User
