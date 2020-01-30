@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body
+{
+	background-image:url(../images/phoneback.jpg);
+}
+.navbar-fixed-top
+{
+	position:absolute;
+}
+
+nav
+{
+	font-family:'Quicksand',sans-serif;
+}
+
+.glow {
+	color:#fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+  font-family:'Quicksand',sans-serif;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #0053b2, 0 0 7px #0053b2, 0 0 8px #0053b2, 0 0 9px #0053b2, 0 0 10px #0053b2;
+  }
+  to {
+    text-shadow: 0 0 2px #fff, 0 0 4px #3188ed, 0 0 6px #3188ed, 0 0 7px #3188ed, 0 0 8px #3188ed, 0 0 9px #3188ed, 0 0 10px #3188ed;
+  }
+}
+
+.myButton {
+	-moz-box-shadow: 0px 10px 14px -7px #276873;
+	-webkit-box-shadow: 0px 10px 14px -7px #276873;
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
+	background:-moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-o-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
+	background-color:#599bb3;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	font-weight:bold;
+	padding:15px 20px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+	font-family:'Quicksand',sans-serif;
+	margin-bottom:20px;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
+	background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
+	background-color:#408c99;
+	font-family:'Quicksand',sans-serif;
+	text-decoration:none;
+	color:#fff;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+	font-family:'Quicksand',sans-serif;
+	text-decoration:none;
+}
+
+.block{
+  display:none;
+}
+
+.digit{
+  display:none;
+}
+
+.about
+{
+	line-height:1.2;
+	font-family:'Quicksand',sans-serif;
+	color:#000;
+}
+
+span.rulescontainer
+{
+	font-family:'Quicksand',sans-serif;
+	color:#000;
+}
+
+span.rulesforumcontainer
+{
+	font-family:'Quicksand',sans-serif;
+	color:#000;
+}
+
+div.container
+{
+	font-family:'Quicksand',sans-serif;
+}
+
+.myLogin {
+	-moz-box-shadow: 0px 10px 14px -7px #276873;
+	-webkit-box-shadow: 0px 10px 14px -7px #276873;
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4caf50), color-stop(1, #329936));
+	background:-moz-linear-gradient(top, #4caf50 5%, #329936 100%);
+	background:-webkit-linear-gradient(top, #4caf50 5%, #329936 100%);
+	background:-o-linear-gradient(top, #4caf50 5%, #329936 100%);
+	background:-ms-linear-gradient(top, #4caf50 5%, #329936 100%);
+	background:linear-gradient(to bottom, #4caf50 5%, #329936 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4caf50', endColorstr='#329936',GradientType=0);
+	background-color:#4caf50;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3bc644;
+	font-family:'Quicksand',sans-serif;
+}
+.myLogin:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05,#329936 ), color-stop(1, #4caf50));
+	background:-moz-linear-gradient(top, #329936 5%, #4caf50 100%);
+	background:-webkit-linear-gradient(top, #329936 5%, #4caf50 100%);
+	background:-o-linear-gradient(top, #329936 5%, #4caf50 100%);
+	background:-ms-linear-gradient(top, #329936 5%, #4caf50 100%);
+	background:linear-gradient(to bottom, #329936 5%, #4caf50 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#329936', endColorstr='#4caf50',GradientType=0);
+	background-color:#329936;
+	font-family:'Quicksand',sans-serif;
+}
+.myLogin:active {
+	position:relative;
+	top:1px;
+	font-family:'Quicksand',sans-serif;
+}
+
+/* Login End*/
+
+
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+  width: 75%;
+  padding: 5px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  border-radius:5px;
+  background: #f1f1f1;
+  color:#000;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 7px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius:5px;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+
+.footer
+{
+	width:100%;
+	height:90px;
+	background:#000;
+	border: 0px;
+	border-collapse: collapse;
+	margin:0;
+	padding:0;
+	margin-top:20px;
+
+}
+
+.footerr
+{
+  width:100%;
+  background:#000;
+  border: 0px;
+  border-collapse: collapse;
+  margin:0;
+  padding:0;
+  height:4px;
+}
+
+div.left-footer
+{
+display:none;
+}
+
+div.middle-footer
+{
+display:none;
+}
+
+div.right-footer
+{
+	display:block;
+	width:100%;
+	height:100%; 
+	overflow:hidden;
+	background:#000;
+}
+
+#about p
+{
+	margin-bottom:35px;
+}
+
+span li
+{
+	line-height:1.2;
+}
+
+.iiitp-box
+{
+	display:none;
+}
+
+.logo-box
+{
+	margin-top:20px;
+}
+
+a.pull-left
+{
+	display:none;
+}
+
+#team .column
+{
+	padding-bottom:80px;
+}
+
+#team img
+{
+	width:100%;
+	border-radius:150px;
+}
+
+
+
+

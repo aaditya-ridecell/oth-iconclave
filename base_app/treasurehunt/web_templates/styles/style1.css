@@ -1,0 +1,568 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+:root
+{
+	--font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+	
+}
+html
+{
+  padding:0;
+  margin:0;
+}
+
+.heim
+{
+	background-image:url(../images/back33.jpg) ; 
+	background-repeat : no-repeat;
+	
+}
+
+body
+{
+	font-size:100%;
+	color:#ffff99;
+	height:100%;
+	font-family:'Quicksand',sans-serif;
+  
+}
+
+#clock{
+  display:block;
+  width:40vw;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:20px;
+  padding:20px;
+  text-align:center;
+  
+}
+
+.footer
+{
+	width:100%;
+	height:90px;
+	background:#000;
+	border: 0px;
+	border-collapse: collapse;
+	margin:0;
+	padding:0;
+
+}
+
+.footerr
+{
+  width:100%;
+  background:#000;
+  border: 0px;
+  border-collapse: collapse;
+  margin:0;
+  padding:0;
+  height:4px;
+}
+
+div.left-footer
+{
+	display:inline-block;
+	width:33%;
+  height:100%;
+  font-size:120%;
+	overflow:hidden;
+  padding-top: 5px;
+
+  
+}
+
+div.middle-footer
+{
+  width:33%;
+  display:inline-block;
+  overflow:hidden;
+  height:100%;
+  font-size:120%;
+  padding-top: 5px;
+}
+
+div.right-footer
+{
+	display:inline-block;
+	width:33%;
+  height:100%; 
+	overflow:hidden;
+}
+
+/*Social icons footer begin */
+.social:hover {
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -o-transform: scale(1.1);
+ }
+ .social {
+     -webkit-transform: scale(0.8);
+     /* Browser Variations: */
+     
+     -moz-transform: scale(0.8);
+     -o-transform: scale(0.8);
+     -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+ }
+
+/*
+    Multicoloured Hover Variations
+*/
+ 
+ #social-fb:hover {
+     color: #3B5998;
+ }
+ #social-tw:hover {
+     color: #4099FF;
+ }
+ #social-ig:hover {
+     color: #d34836;
+ }
+ 
+/*Social icons footer end */
+
+
+.block{
+  display:inline-block;
+  width:16%;
+  margin:0.3vw;
+  padding:0.5vw;
+  font-size:20px;
+  text-align:center;
+}
+
+.digit{
+  display:block;
+  font-size:50px;
+  background-color:#4caeff;
+  overflow:hidden;
+  color:#18123C;
+  border-radius:30px;
+}
+
+
+ul
+{
+	line-height:1.6;
+	font-family:'Quicksand',sans-serif;
+}
+
+.glow {
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+  font-family:'Quicksand',sans-serif;
+}
+
+.about
+{
+	line-height:1.8;
+	font-family:'Quicksand',sans-serif;
+	color:#000;
+}
+
+span.rulescontainer
+{
+	display:inline-block;
+	width:49%;
+	height:500px;
+	padding:10px;
+	font-family:'Quicksand',sans-serif;
+	color:#000;
+	overflow:hidden;
+}
+
+span.rulesforumcontainer
+{
+	display:inline-block;
+	width:49%;
+	height:500px;
+	padding:10px;
+	overflow:hidden;
+	font-family:'Quicksand',sans-serif;
+	color:#000;
+}
+
+div.transbox 
+{
+	margin:65px;
+  background-color: #ffffff;
+  color:#000;
+  border: 1px solid black;
+  filter: alpha(opacity=60); 
+  /* For IE8 and earlier */
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #0053b2, 0 0 7px #0053b2, 0 0 8px #0053b2, 0 0 9px #0053b2, 0 0 10px #0053b2;
+  }
+  to {
+    text-shadow: 0 0 2px #fff, 0 0 4px #3188ed, 0 0 6px #3188ed, 0 0 7px #3188ed, 0 0 8px #3188ed, 0 0 9px #3188ed, 0 0 10px #3188ed;
+  }
+}
+
+.logo-box
+{
+	display:inline-block;
+	background:url(images\iiitplogo.png);
+	 width: 100px;
+	height: 100px;
+	padding: 10px;
+  
+}
+
+.iiitp-box
+{
+	display:inline-block;
+	background:url(images\nth3.png);
+	width: 100px;
+	height: 100px;
+	padding: 10px;  
+}
+
+.myButton {
+	-moz-box-shadow: 0px 10px 14px -7px #276873;
+	-webkit-box-shadow: 0px 10px 14px -7px #276873;
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
+	background:-moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-o-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
+	background-color:#599bb3;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:18px;
+	font-weight:bold;
+	padding:15px 20px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+	font-family:'Quicksand',sans-serif;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
+	background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
+	background-color:#408c99;
+	font-family:'Quicksand',sans-serif;
+	text-decoration:none;
+	color:#fff;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+	font-family:'Quicksand',sans-serif;
+	text-decoration:none;
+}
+
+.regback
+{
+	background-image:url(../images/back68.jpg);
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 20px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/*Login */
+
+.myLogin {
+	-moz-box-shadow: 0px 10px 14px -7px #276873;
+	-webkit-box-shadow: 0px 10px 14px -7px #276873;
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4caf50), color-stop(1, #329936));
+	background:-moz-linear-gradient(top, #4caf50 5%, #329936 100%);
+	background:-webkit-linear-gradient(top, #4caf50 5%, #329936 100%);
+	background:-o-linear-gradient(top, #4caf50 5%, #329936 100%);
+	background:-ms-linear-gradient(top, #4caf50 5%, #329936 100%);
+	background:linear-gradient(to bottom, #4caf50 5%, #329936 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4caf50', endColorstr='#329936',GradientType=0);
+	background-color:#4caf50;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3bc644;
+	font-family:'Quicksand',sans-serif;
+}
+.myLogin:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05,#329936 ), color-stop(1, #4caf50));
+	background:-moz-linear-gradient(top, #329936 5%, #4caf50 100%);
+	background:-webkit-linear-gradient(top, #329936 5%, #4caf50 100%);
+	background:-o-linear-gradient(top, #329936 5%, #4caf50 100%);
+	background:-ms-linear-gradient(top, #329936 5%, #4caf50 100%);
+	background:linear-gradient(to bottom, #329936 5%, #4caf50 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#329936', endColorstr='#4caf50',GradientType=0);
+	background-color:#329936;
+	font-family:'Quicksand',sans-serif;
+}
+.myLogin:active {
+	position:relative;
+	top:1px;
+	font-family:'Quicksand',sans-serif;
+}
+
+/* Login End*/
+
+
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+  width: 50%;
+  padding: 5px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  border-radius:5px;
+  background: #f1f1f1;
+  color:#000;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 7px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius:5px;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+
+.colourchange
+{
+	color:#000;
+}
+
+#reg .colourchange
+{
+	color:#fff;
+}
+
+/* Login html css */
+.card-container.card {
+    max-width: 350px;
+    padding: 40px 40px;
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/*
+ * Card component
+ */
+.card {
+	opacity:0.8;
+    background-color: #302f2f;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+	opacity:1;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-signin {
+    /*background-color: #4d90fe; */
+    background-color: rgb(104, 145, 162);
+    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgb(12, 97, 33);
+}
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgb(12, 97, 33);
+}
+/*End login html css */
+
+.navbar
+{
+	background:#000;
+}
+
+nav li
+{
+	padding-right:10px;
+}
+
+#team img
+{
+	width:100%;
+	border-radius:5px;
+}
+
+
+
+
+

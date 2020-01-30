@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>Log In</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <!--Included Shit 3-->
+ 
+ 
+  <link rel="stylesheet" type="text/css" href="styles/w3.css" />
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Felipa" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script>
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        window.location.hash = hash;
+      });
+    } 
+  });
+});
+</script>
+  <link rel="stylesheet" type="text/css" href="styles/style1.css" />
+</head>
+<body background = "images\back33.jpg">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="pull-left" href="#home"><img src = "images/qubitlogo.png"></a>
+    </div>
+    <ul class="nav navbar-nav" style = "padding-left:20px;">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#rule">Rules</a></li>
+	  <li><a href="#">Team</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="index.html#reg"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+<br><br><br><br><br>
+<!-- Script for login -->
+<script>
+$( document ).ready(function() {
+    loadProfile();
+});
+function getLocalProfile(callback){
+    var profileImgSrc      = localStorage.getItem("PROFILE_IMG_SRC");
+    var profileName        = localStorage.getItem("PROFILE_NAME");
+    var profileReAuthEmail = localStorage.getItem("PROFILE_REAUTH_EMAIL");
+
+    if(profileName !== null
+            && profileReAuthEmail !== null
+            && profileImgSrc !== null) {
+        callback(profileImgSrc, profileName, profileReAuthEmail);
+    }
+}
+
+function loadProfile() {
+    if(!supportsHTML5Storage()) { return false; }
+    // we have to provide to the callback the basic
+    // information to set the profile
+    getLocalProfile(function(profileImgSrc, profileName, profileReAuthEmail) {
+        //changes in the UI
+        $("#profile-img").attr("src",profileImgSrc);
+        $("#profile-name").html(profileName);
+        $("#reauth-email").html(profileReAuthEmail);
+        $("#inputEmail").hide();
+        $("#remember").hide();
+    });
+}
+function supportsHTML5Storage() {
+    try {
+        return 'localStorage' in window && window['localStorage'] !== null;
+    } catch (e) {
+        return false;
+    }
+}
+function testLocalStorageData() {
+    if(!supportsHTML5Storage()) { return false; }
+    localStorage.setItem("PROFILE_IMG_SRC", "//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" );
+    localStorage.setItem("PROFILE_NAME", "César Izquierdo Tello");
+    localStorage.setItem("PROFILE_REAUTH_EMAIL", "oneaccount@gmail.com");
+}
+</script>
+<!-- Script End -->
+<div class="container">
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="images\nth3.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+            </form><!-- /form -->
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+    <br><br>
+    <!--Footer [same as index page]  -->
+    <div class = "footer">
+  <div class = "left-footer">
+    
+
+    <br>
+        <center>
+          <p style="color:#fff;">
+          Copyright &copy; Qubit2k19
+        </p>
+        </center>
+    
+    
+  </div>
+  <div class="middle-footer">
+    <center>
+    <br>  
+    <p style="color:#fff;">
+      Made with <span style="font-size:100%;color:red;">&hearts;</span> by Web Design <a href = "#team" style = "color:dodgerblue;">Team</a>
+    </p>
+  </center>
+  </div>
+
+  <div class = "right-footer">
+    
+
+      
+        <div>
+            
+              <br>
+              <center>
+                <a href="https://www.facebook.com/"><i id="social-fb" class="fa fa-facebook fa-3x social"></i></a>
+              <a href="https://twitter.com/"><i id="social-tw" class="fa fa-twitter fa-3x social"></i></a>
+              <a href="https://instagram.com/"><i id="social-ig" class="fa fa-instagram fa-3x social"></i></a>
+              </center>
+          
+</div>
+    
+
+  </div>
+</div>
+<div class="footerr">
+  </div>
+
+</body>
+
+
+</html>
