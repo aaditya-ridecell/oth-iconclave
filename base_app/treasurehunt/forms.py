@@ -3,8 +3,6 @@ from django.contrib.auth.models import User
 
 
 class UserForm(forms.ModelForm):
-    username = forms.
-
     password = forms.CharField(widget=forms.PasswordInput(
         attrs={'placeholder': 'Enter the Password'}))
     confirm_password = forms.CharField(widget=forms.PasswordInput(

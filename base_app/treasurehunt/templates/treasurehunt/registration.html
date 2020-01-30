@@ -21,11 +21,13 @@
 					{{ user_form.non_field_errors }}
 					<div class="fieldWrapper">
 						{{ user_form.username.errors }}
+						<label class="whitecolor" for="{{ user_form.username.id_for_label }}">Username:</label>
 						{{ user_form.username }}
 					</div>
 					<br>
 					<div class="fieldWrapper">
 						{{ user_form.email.errors }}
+						<label class="whitecolor" for="{{ user_form.email.id_for_label }}">Email:</label>
 						{{ user_form.email }}
 					</div>
 					<br>

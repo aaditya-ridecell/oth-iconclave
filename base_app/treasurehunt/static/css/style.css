@@ -213,6 +213,10 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
+.whitecolor {
+  color: white;
+}
+
 h1 {
   font-size: 3em;
   text-align: center;
