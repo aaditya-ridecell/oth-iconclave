@@ -18,23 +18,27 @@ def register(request):
 
     if request.method == 'POST':
         user_form = forms.UserForm(data=request.POST)
-
         if user_form.is_valid():
-            user = user_form.save()
-            user.set_password(user.password)
-            user.save()
+            passmain = user_form.cleaned_data['password']
+            passverify = user_form.cleaned_data['confirm_password']
+            if passmain == passverify:
+                user = user_form.save()
+                user.set_password(user.password)
+                user.save()
 
-            score = models.Score()
-            score.user = user
-            score.save()
+                score = models.Score()
+                score.user = user
+                score.save()
 
-            registered = True
+                registered = True
+            else:
+                return HttpResponse("Password Don't Match")
         else:
             print(user_form.errors)
     else:
         user_form = forms.UserForm()
 
-    return render(request, 'treasurehunt/registration.html', {
+    return render(request, 'treasurehunt/signup.html', {
         'user_form': user_form,
         'registered': registered
     })
@@ -51,7 +55,7 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect(reverse('treasurehunt:index'))
+                return HttpResponseRedirect(reverse('treasurehunt:question'))
             else:
                 return HttpResponse("ACCOUNT NOT ACTIVE")
         else:
@@ -68,9 +72,15 @@ def user_logout(request):
     return HttpResponseRedirect(reverse('treasurehunt:index'))
 
 
-# @login_required
-# def question(request):
-#     current_user = request.user
-#     sc = Score.objects.get(user__exact=user)
-#     print(sc.score)
-#     return render(request, 'treasurehunt/question.html')
+@login_required
+def question(request):
+    current_user = request.user
+    sc = models.Score.objects.get(user__exact=current_user)
+    print(sc.score)
+    if request.method == 'POST':
+        question_form = forms.Answer(data=request.POST)
+    else:
+        question_form = forms.Answer()
+    return render(request, 'treasurehunt/question.html', {
+        'question_form': question_form,
+    })

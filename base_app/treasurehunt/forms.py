@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from . import models
 
 
 class UserForm(forms.ModelForm):
@@ -13,9 +14,9 @@ class UserForm(forms.ModelForm):
         fields = ('username', 'email', 'password', 'confirm_password')
 
 
-# class Answer(forms.ModelForm):
-#     answer = forms.CharField(
-#         forms.TextInput(attrs={'placeholder': 'Enter your answer'}))
+class Answer(forms.ModelForm):
+    answer = forms.CharField()
 
-#     class Meta():
-#         fields = ('answer')
+    class Meta():
+        model = models.Answer
+        fields = ('answer', )
