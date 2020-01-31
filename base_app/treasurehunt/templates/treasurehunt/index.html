@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 {% load static %}
-<html>
+<html lang="en">
 
 <head>
-	<title>Online Treasure Hunt | An event of I-Conclave 20'</title>
-	<link rel="icon" href="{% static 'images/demo-g.jpg' %}" type="image/jpg" sizes="16x16">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script
-		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+  <title>Online Treasure Hunt | An event of I-Conclave 20'</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css'%}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/style2.css'%}">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="icon" href="{% static 'iamges/demo-g.jpg'%}" type="image/jpg" sizes="16x16">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
-	<div class="main-w3layouts wrapper">
-		<img class="center" src="{% static 'images/icl1.png' %}">
-		<br>
-		<center>
-			<h2>presents</h2>
-		</center>
-		<br>
-		<p>
-			<h1 class="glow">Online Treasure Hunt</h1>
-		</p>
-		<div class="main-agileinfo">
-			<div class="agileits-top">
-				<div class="buttons">
-					{% if user.is_authenticated %}
-					<p>Logged in as : {{ user.get_username }}</p>
-					<br>
-					<center><a href="{% url 'treasurehunt:logout' %}" class="NotmyButton">Log Out</a></center>
-					{% else %}
-					<a href="{% url 'treasurehunt:register' %}" class="myButton">Register</a>
-					<a href="{% url 'treasurehunt:login' %}" class="NotmyButton">Log In</a>
-					{% endif %}
-				</div>
-			</div>
-		</div>
-	</div>
+  <!-- Navbar Section -->
+  <div class="mynavbar">
+    <nav role='navigation'>
+      <span class="logo"><a href="{% url 'treasurehunt:index' %}">I - Conclave</a></span>
+      <ul>
+        <li><a href="{% url 'treasurehunt:index' %}">Home</a></li>
+        <li><a href="#aboutus">Rules</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="#" style="text-transform: none;">Logged in as : {{user.username}}</a></li>
+        <li><a href="{% url 'treasurehunt:logout' %}">Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'treasurehunt:register' %}">Register</a></li>
+        <li><a href="{% url 'treasurehunt:login' %}">Login</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+  <!-- End Navbar Section -->
+
+  <div class="intro">
+  </div>
+
 </body>
 
 </html>

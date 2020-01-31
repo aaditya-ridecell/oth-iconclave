@@ -1,39 +1,63 @@
 <!DOCTYPE html>
 {% load static %}
-<html>
+<html lang="en">
 
 <head>
-	<title>Log In</title>
-	<link rel="icon" href="{% static 'images/demo-g.jpg' %}" type="image/jpg" sizes="16x16">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script
-		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css'%}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/style2.css'%}">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="icon" href="{% static 'images/demo-g.jpg'%}" type="image/jpg" sizes="16x16">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
-	<div class="main-w3layouts wrapper">
-		<h1>Log In</h1>
-		<div class="main-agileinfo">
-			<div class="agileits-top">
-				<form action="{% url 'treasurehunt:login' %}" method="post">
-					{% csrf_token %}
-					<input type="text" name="username" placeholder="Enter Username">
-					<br>
-					<input type="password" name="password" placeholder="Enter Password">
-					<input type="submit" value="Login">
-				</form>
-				<!-- <form action="#" method="post">
-					<input class="text" type="text" name="Username" placeholder="Username" required="">
-					<input class="text" type="password" name="password" placeholder="Password" required="">
-					<input type="submit" value="SIGNUP">
-				</form> -->
-				<p>Don't have an account? <a href="{% url 'treasurehunt:register' %}" style="color:#fffb14">Sign Up Here
-						!</a></p>
-			</div>
-		</div>
-	</div>
+  <!-- Navbar Section -->
+  <div class="mynavbar">
+    <nav role='navigation'>
+      <span class="logo"><a href="{% url 'treasurehunt:index' %}">I - Conclave</a></span>
+      <ul>
+        <li><a href="{% url 'treasurehunt:index' %}">Home</a></li>
+        <li><a href="#aboutus">Rules</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'treasurehunt:logout' %}">Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'treasurehunt:register' %}">Register</a></li>
+        <li><a href="{% url 'treasurehunt:login' %}">Login</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+  <br><br><br><br><br>
+  <!-- Login Container -->
+  <div class="login">
+    <form action="{% url 'treasurehunt:login' %}" method="post">
+      <div class="container">
+        {% csrf_token %}
+        <!-- <input type="text" name="username" placeholder="Enter Username">
+        <br>
+        <input type="password" name="password" placeholder="Enter Password">
+        <input type="submit" value="Login"> -->
+        <h1>Login</h1>
+        <p>Login to your account using your credentials.</p>
+        <hr>
+        <input class="text" type="text" name="username" placeholder="Username" required="">
+        <input class="text" type="password" name="password" placeholder="Password" required="">
+        <input type="submit" value="Login">
+        <br>
+        <br>  
+        <hr>
+        <p>Not a member ? <a href="{% url 'treasurehunt:register' %}">Sign Up </a></p>
+
+      </div>
+    </form>
+  </div>
+  <!-- Login Container End -->
 </body>
 
 </html>
