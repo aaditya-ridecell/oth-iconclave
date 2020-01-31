@@ -11,3 +11,11 @@ class UserForm(forms.ModelForm):
     class Meta():
         model = User
         fields = ('username', 'email', 'password', 'confirm_password')
+
+
+# class Answer(forms.ModelForm):
+#     answer = forms.CharField(
+#         forms.TextInput(attrs={'placeholder': 'Enter your answer'}))
+
+#     class Meta():
+#         fields = ('answer')

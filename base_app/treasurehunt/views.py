@@ -66,3 +66,7 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('treasurehunt:index'))
+
+
+# @login_required
+# def question(request):
