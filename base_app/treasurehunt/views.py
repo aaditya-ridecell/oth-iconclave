@@ -70,3 +70,9 @@ def user_logout(request):
 
 # @login_required
 # def question(request):
+#     current_user = request.user
+
+#     if request.method == 'POST':
+
+#     else:
+#         return render(request, 'treasurehunt/question.html')
