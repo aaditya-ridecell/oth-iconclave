@@ -74,13 +74,33 @@ def user_logout(request):
 
 @login_required
 def question(request):
+    ans_fixed = ['chichenitza', 'oliverkahn', 'thanos', 'kokura', 'oas']
     current_user = request.user
     sc = models.Score.objects.get(user__exact=current_user)
-    print(sc.score)
     if request.method == 'POST':
         question_form = forms.Answer(data=request.POST)
+        if question_form.is_valid():
+            ans = question_form.cleaned_data['answer']
+            print(ans)
+            if ans == ans_fixed[sc.score]:
+                sc.score = sc.score + 1
+                sc.save()
+            else:
+                return render(request, 'treasurehunt/question.html', {
+                    'question_form': question_form,
+                    'score': sc.score,
+                })
+        else:
+            return render(request, 'treasurehunt/question.html', {
+                'question_form': question_form,
+                'score': sc.score,
+            })
     else:
         question_form = forms.Answer()
+
+    if sc.score == 12:
+        return render(request, 'treasurehunt/index.html')
     return render(request, 'treasurehunt/question.html', {
         'question_form': question_form,
+        'score': sc.score,
     })

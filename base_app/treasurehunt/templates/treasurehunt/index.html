@@ -28,6 +28,7 @@
         {% if user.is_authenticated %}
         <li><a href="#" style="text-transform: none;">Logged in as : {{user.username}}</a></li>
         <li><a href="{% url 'treasurehunt:logout' %}">Logout</a></li>
+        <li><a href="{% url 'treasurehunt:question' %}">Question</a></li>
         {% else %}
         <li><a href="{% url 'treasurehunt:register' %}">Register</a></li>
         <li><a href="{% url 'treasurehunt:login' %}">Login</a></li>

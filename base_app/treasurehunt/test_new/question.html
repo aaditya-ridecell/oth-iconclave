@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 
 <head>
@@ -25,21 +24,14 @@
 				{% if user.is_authenticated %}
 				<li><a href="#" style="text-transform: none;">Logged in as : {{user.username}}</a></li>
 				<li><a href="#aboutus">Rules</a></li>
-				<li><a href="">Score : {{score}}</a></li>
+				<li><a href="">Score</a></li>
 				<li><a href="{% url 'treasurehunt:logout' %}">Logout</a></li>
-				{% endif %}
 			</ul>
 		</nav>
 	</div>
 	<br><br><br><br><br>
 	<div class="container">
 		<h2>Problem Statement :</h2>
-		<img src="{% static 'images/'%}{{score}}.jpg" width="600px" height="350px" alt="">
-		<form method="POST" enctype="multipart/form-data">
-			{% csrf_token %}
-			{{question_form.as_p}}
-			<input type="submit" value="Submit">
-		</form>
 	</div>
 </body>
 
