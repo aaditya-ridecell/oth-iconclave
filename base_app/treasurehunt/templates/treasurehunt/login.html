@@ -17,12 +17,20 @@
 		<h1>Log In</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="#" method="post">
-					<!--<input class="text" type="text" name="Username" placeholder="Username" required="">
-					<input class="text" type="password" name="password" placeholder="Password" required="">
-					<input type="submit" value="SIGNUP">-->
+				<form action="{% url 'treasurehunt:login' %}" method="post">
+					{% csrf_token %}
+					<input type="text" name="username" placeholder="Enter Username">
+					<br>
+					<input type="password" name="password" placeholder="Enter Password">
+					<input type="submit" value="Login">
 				</form>
-				<p>Don't have an account? <a href="registration.html" style="color:#fffb14">Sign Up Here !</a></p>
+				<!-- <form action="#" method="post">
+					<input class="text" type="text" name="Username" placeholder="Username" required="">
+					<input class="text" type="password" name="password" placeholder="Password" required="">
+					<input type="submit" value="SIGNUP">
+				</form> -->
+				<p>Don't have an account? <a href="{% url 'treasurehunt:register' %}" style="color:#fffb14">Sign Up Here
+						!</a></p>
 			</div>
 		</div>
 	</div>

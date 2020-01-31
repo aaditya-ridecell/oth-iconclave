@@ -15,7 +15,13 @@
 	<div class="main-w3layouts wrapper">
 		<h1>Registration</h1>
 		<div class="main-agileinfo">
-			<div class="agileits-top">
+			<div class="agileits-top redcolor">
+				{% if registered %}
+				<h1>Thank You for Registering!</h1>
+				<br>
+				<br>
+				<center><a href="{% url 'treasurehunt:login' %}" class="NotmyButton">Log In</a></center>
+				{% else %}
 				<form method="POST" enctype="multipart/form-data">
 					{% csrf_token %}
 					{{ user_form.non_field_errors }}
@@ -51,7 +57,8 @@
 					<input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="">-->
 
 
-				<p>Have an Account? <a href="#" style="color:#fffb14"> Login Now!</a></p>
+				<p>Have an Account? <a href="{% url 'treasurehunt:login' %}" style="color:#fffb14"> Login Now!</a></p>
+				{% endif %}
 			</div>
 		</div>
 	</div>
