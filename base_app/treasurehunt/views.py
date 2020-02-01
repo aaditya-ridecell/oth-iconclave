@@ -13,7 +13,8 @@ def index(request):
 
 
 def register(request):
-
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('treasurehunt:question'))   
     registered = False
 
     if request.method == 'POST':
@@ -45,7 +46,8 @@ def register(request):
 
 
 def user_login(request):
-
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('treasurehunt:question'))
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -82,7 +84,7 @@ def question(request):
         if question_form.is_valid():
             ans = question_form.cleaned_data['answer']
             print(ans)
-            if ans == ans_fixed[sc.score]:
+            if ans.lower() == ans_fixed[sc.score]:
                 sc.score = sc.score + 1
                 sc.save()
             else:
@@ -98,8 +100,6 @@ def question(request):
     else:
         question_form = forms.Answer()
 
-    if sc.score == 12:
-        return render(request, 'treasurehunt/index.html')
     return render(request, 'treasurehunt/question.html', {
         'question_form': question_form,
         'score': sc.score,
