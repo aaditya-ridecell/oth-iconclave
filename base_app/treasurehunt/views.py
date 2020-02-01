@@ -7,14 +7,13 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
-
 def index(request):
     return render(request, 'treasurehunt/index.html')
 
 
 def register(request):
     if request.user.is_authenticated:
-        return HttpResponseRedirect(reverse('treasurehunt:question'))   
+        return HttpResponseRedirect(reverse('treasurehunt:question'))
     registered = False
 
     if request.method == 'POST':
@@ -104,3 +103,8 @@ def question(request):
         'question_form': question_form,
         'score': sc.score,
     })
+
+def leaderboard(request):
+
+
+#t = Score.objects.all().order_by('-score')
