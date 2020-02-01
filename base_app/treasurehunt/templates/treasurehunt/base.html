@@ -27,8 +27,8 @@
                 <li><a href="{% static 'files/Rules.pdf'%}" target="_blank" rel="noopener noreferrer">Rules</a></li>
                 <li><a href="{% url 'treasurehunt:leaderboard' %}">LeaderBoard</a></li>
                 {% if user.is_authenticated %}
-                <li><a href="#" style="text-transform: none;">Logged in as : {{user.username}}</a></li>
                 <li><a href="{% url 'treasurehunt:question' %}">Question</a></li>
+                <li><a href="#" style="text-transform: none;">Logged in as : {{user.username}}</a></li>
                 <li><a href="{% url 'treasurehunt:logout' %}">Logout</a></li>
                 {% else %}
                 <li><a href="{% url 'treasurehunt:register' %}">Register</a></li>
