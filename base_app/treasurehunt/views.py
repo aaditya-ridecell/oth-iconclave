@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
+
 def index(request):
     return render(request, 'treasurehunt/index.html')
 
@@ -104,7 +105,8 @@ def question(request):
         'score': sc.score,
     })
 
-def leaderboard(request):
 
+# def leaderboard(request):
 
 #t = Score.objects.all().order_by('-score')
+# t[0].user.username
