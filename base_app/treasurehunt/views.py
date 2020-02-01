@@ -76,7 +76,10 @@ def user_logout(request):
 
 @login_required
 def question(request):
-    ans_fixed = ['chichenitza', 'oliverkahn', 'thanos', 'kokura', 'oas']
+    ans_fixed = [
+        'chichenitza', 'oliverkahn', 'thanos', 'kokura', 'oas',
+        'thomasjefferson', '79', 'georgcanter'
+    ]
     current_user = request.user
     sc = models.Score.objects.get(user__exact=current_user)
     if request.method == 'POST':
@@ -106,7 +109,23 @@ def question(request):
     })
 
 
-# def leaderboard(request):
+def leaderboard(request):
+    leader = models.Score.objects.all().order_by('-score')
+    if len(leader) >= 10:
+        user_name = []
+        for x in leader[:10]:
+            user_name.append((x.user.username, x.score))
+        return render(request, 'treasurehunt/leaderboard.html', {
+            'user_name': user_name,
+        })
+    else:
+        user_name = []
+        for x in leader:
+            user_name.append((x.user.username, x.score))
+        return render(request, 'treasurehunt/leaderboard.html', {
+            'user_name': user_name,
+        })
+
 
 #t = Score.objects.all().order_by('-score')
 # t[0].user.username
