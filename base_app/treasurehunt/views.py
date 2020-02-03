@@ -77,8 +77,20 @@ def user_logout(request):
 @login_required
 def question(request):
     ans_fixed = [
-        'chichenitza', 'oliverkahn', 'thanos', 'kokura', 'oas',
-        'thomasjefferson', '79', 'georgcanter'
+        'thomasjefferson',
+        'iiitp',
+        'jamesbond',
+        'chichenitza',
+        'va',
+        'yukihiromatsumoto',
+        'christiaanhuygens',
+        'thanos',
+        'benjohnson',
+        '7927',
+        'kokura',
+        'ngc4486',
+        'georgcantor',
+        'oas',
     ]
     current_user = request.user
     sc = models.Score.objects.get(user__exact=current_user)
