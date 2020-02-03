@@ -112,6 +112,8 @@ def question(request):
                 'question_form': question_form,
                 'score': sc.score,
             })
+    if sc.score == 14:
+        return HttpResponse("Congratulations on Completing The Treasure Hunt")
     else:
         question_form = forms.Answer()
 
