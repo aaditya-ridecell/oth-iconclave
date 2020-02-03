@@ -98,7 +98,6 @@ def question(request):
         question_form = forms.Answer(data=request.POST)
         if question_form.is_valid():
             ans = question_form.cleaned_data['answer']
-            print(ans)
             if ans.lower() == ans_fixed[sc.score]:
                 sc.score = sc.score + 1
                 sc.save()
@@ -113,7 +112,8 @@ def question(request):
                 'score': sc.score,
             })
     if sc.score == 14:
-        return HttpResponse("Congratulations on Completing The Treasure Hunt")
+        return HttpResponse(
+            "<h1>Congratulations on Completing The Treasure Hunt</h1>")
     else:
         question_form = forms.Answer()
 
