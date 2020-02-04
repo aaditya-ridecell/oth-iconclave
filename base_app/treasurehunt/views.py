@@ -92,42 +92,55 @@ def question(request):
         'georgcantor',
         'oas',
     ]
+
+    question_fixed = [
+        '0', '1', '2', '3', '4', '5wopeiqweoj', '6XYyxasydyaanmp',
+        '7dwqeqpdsaaqQ', '8Qweqewqdsapoi', '9dsawqQwqe', '10QASawqeadsp',
+        '11IUoiruwefhdsl', '12IYRUEHDSnakhqw', '13KLJcmnxwqeg'
+    ]
+
     current_user = request.user
     sc = models.Score.objects.get(user__exact=current_user)
-    if request.method == 'POST':
-        question_form = forms.Answer(data=request.POST)
-        if question_form.is_valid():
-            ans = question_form.cleaned_data['answer']
-            if ans.lower() == ans_fixed[sc.score]:
-                sc.score = sc.score + 1
-                sc.save()
-            else:
-                return render(request, 'treasurehunt/question.html', {
-                    'question_form': question_form,
-                    'score': sc.score,
-                })
-        else:
-            return render(request, 'treasurehunt/question.html', {
-                'question_form': question_form,
-                'score': sc.score,
-            })
     if sc.score == 14:
         return HttpResponse(
             "<h1>Congratulations on Completing The Treasure Hunt</h1>")
     else:
-        question_form = forms.Answer()
-
-    return render(request, 'treasurehunt/question.html', {
-        'question_form': question_form,
-        'score': sc.score,
-    })
+        if request.method == 'POST':
+            question_form = forms.Answer(data=request.POST)
+            if question_form.is_valid():
+                ans = question_form.cleaned_data['answer']
+                if ans.lower() == ans_fixed[sc.score]:
+                    sc.score = sc.score + 1
+                    sc.save()
+                else:
+                    return render(
+                        request, 'treasurehunt/question.html', {
+                            'question_form': question_form,
+                            'score': sc.score,
+                            'question_fixed': question_fixed[sc.score],
+                        })
+            else:
+                return render(
+                    request, 'treasurehunt/question.html', {
+                        'question_form': question_form,
+                        'score': sc.score,
+                        'question_fixed': question_fixed[sc.score],
+                    })
+        else:
+            question_form = forms.Answer()
+        return render(
+            request, 'treasurehunt/question.html', {
+                'question_form': question_form,
+                'score': sc.score,
+                'question_fixed': question_fixed[sc.score],
+            })
 
 
 def leaderboard(request):
     leader = models.Score.objects.all().order_by('-score')
     if len(leader) >= 10:
         user_name = []
-        for x in leader[:10]:
+        for x in leader:
             user_name.append((x.user.username, x.score))
         return render(request, 'treasurehunt/leaderboard.html', {
             'user_name': user_name,

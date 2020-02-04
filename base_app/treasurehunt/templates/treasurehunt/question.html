@@ -42,7 +42,7 @@
 	<br><br><br><br><br>
 	<div class="container">
 		<h2>Problem Statement :</h2>
-		<img src="{% static 'images/'%}{{score}}.png" type="image/png" width="600px" height="350px" alt="">
+		<img src="{% static 'images/'%}{{question_fixed}}.png" type="image/png" width="600px" height="350px" alt="">
 		<form method="POST" enctype="multipart/form-data">
 			{% csrf_token %}
 			{{question_form.as_p}}
