@@ -14,3 +14,14 @@ class Score(models.Model):
 
 class Answer(models.Model):
     answer = models.CharField(max_length=255)
+
+
+class AnswerChecker(models.Model):
+    index = models.PositiveIntegerField(default=0, unique=True)
+    answer = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.answer
+
+    def ans_value(self):
+        return self.answer

@@ -76,22 +76,6 @@ def user_logout(request):
 
 @login_required
 def question(request):
-    ans_fixed = [
-        'thomasjefferson',
-        'iiitp',
-        'jamesbond',
-        'chichenitza',
-        'va',
-        'yukihiromatsumoto',
-        '7927',
-        'benjohnson',
-        'thanos',
-        'christiaanhuygens',
-        'kokura',
-        'ngc4486',
-        'georgcantor',
-        'oas',
-    ]
 
     question_fixed = [
         '0', '1', '2', '3', '4', '5wopeiqweoj', '6XYyxasydyaanmp',
@@ -101,6 +85,9 @@ def question(request):
 
     current_user = request.user
     sc = models.Score.objects.get(user__exact=current_user)
+    ans_fixed = models.AnswerChecker.objects.get(index__exact=sc.score)
+    print(ans_fixed)
+    print(type(ans_fixed))
     if sc.score == 14:
         return HttpResponse(
             "<h1>Congratulations on Completing The Treasure Hunt</h1>")
@@ -109,7 +96,7 @@ def question(request):
             question_form = forms.Answer(data=request.POST)
             if question_form.is_valid():
                 ans = question_form.cleaned_data['answer']
-                if ans.lower() == ans_fixed[sc.score]:
+                if ans.lower() == ans_fixed.ans_value():
                     sc.score = sc.score + 1
                     sc.save()
                 else:
