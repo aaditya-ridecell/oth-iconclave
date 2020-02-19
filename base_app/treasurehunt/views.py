@@ -86,8 +86,6 @@ def question(request):
     current_user = request.user
     sc = models.Score.objects.get(user__exact=current_user)
     ans_fixed = models.AnswerChecker.objects.get(index__exact=sc.score)
-    print(ans_fixed)
-    print(type(ans_fixed))
     if sc.score == 14:
         return HttpResponse(
             "<h1>Congratulations on Completing The Treasure Hunt</h1>")
